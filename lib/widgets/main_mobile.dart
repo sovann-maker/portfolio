@@ -9,7 +9,6 @@ class MainMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     final screenHeight = screenSize.height;
-    final screenWidth = screenSize.width;
 
     return Container(
       margin: const EdgeInsets.symmetric(
