@@ -49,7 +49,7 @@ class MainMobile extends StatelessWidget {
             ),
             child: ClipOval(
               child: Image.asset(
-                '/Users/macbookpro/Desktop/flutter/my_profile_tutorial/assets/portfolioPic.JPG',
+                'assets/portfolioPic.JPG',
                 width: 120,
                 height: 120,
                 fit: BoxFit.cover,
