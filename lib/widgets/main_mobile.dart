@@ -33,9 +33,28 @@ class MainMobile extends StatelessWidget {
               ]).createShader(bounds);
             },
             blendMode: BlendMode.srcATop,
-            child: Image.asset(
-              "assets/my_flutter_avatar.png",
-              width: screenWidth,
+          ),
+          Container(
+            width: 250,
+            height: 280,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.5),
+                  spreadRadius: 5,
+                  blurRadius: 7,
+                  offset: Offset(0, 3),
+                ),
+              ],
+            ),
+            child: ClipOval(
+              child: Image.asset(
+                '/Users/macbookpro/Desktop/flutter/my_profile_tutorial/assets/portfolioPic.JPG',
+                width: 120,
+                height: 120,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           const SizedBox(height: 30),
