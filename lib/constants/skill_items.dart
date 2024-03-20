@@ -31,8 +31,7 @@ const List<Map> skillItems = [
     "title": "HTML5",
   },
   {
-    "img":
-        "/Users/macbookpro/Desktop/flutter/my_profile_tutorial/assets/tailwind.png",
+    "img": "assets/tailwind.png",
     "title": "Tailwind CSS",
   },
   {
@@ -40,13 +39,11 @@ const List<Map> skillItems = [
     "title": "JS",
   },
   {
-    "img":
-        "/Users/macbookpro/Desktop/flutter/my_profile_tutorial/assets/firebase.png",
+    "img": "assets/firebase.png",
     "title": "Firebase",
   },
   {
-    "img":
-        "/Users/macbookpro/Desktop/flutter/my_profile_tutorial/assets/stripe.png",
+    "img": "assets/stripe.png",
     "title": "Stripe",
   },
   {
