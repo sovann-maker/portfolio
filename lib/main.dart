@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: kCustomTheme,
-      title: 'Shohruh AK',
+      title: 'Sovann Chim',
       home: const HomePage(),
     );
   }

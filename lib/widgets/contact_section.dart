@@ -64,7 +64,10 @@ class ContactSection extends StatelessWidget {
               width: double.maxFinite,
               child: ElevatedButton(
                 onPressed: () {},
-                child: const Text("Get in touch"),
+                child: const Text(
+                  "Get in touch",
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
             ),
           ),
@@ -99,24 +102,6 @@ class ContactSection extends StatelessWidget {
                 },
                 child: Image.asset(
                   "assets/linkedin.png",
-                  width: 28,
-                ),
-              ),
-              InkWell(
-                onTap: () {
-                  js.context.callMethod('open', [SnsLinks.facebook]);
-                },
-                child: Image.asset(
-                  "assets/facebook.png",
-                  width: 28,
-                ),
-              ),
-              InkWell(
-                onTap: () {
-                  js.context.callMethod('open', [SnsLinks.instagram]);
-                },
-                child: Image.asset(
-                  "assets/instagram.png",
                   width: 28,
                 ),
               ),

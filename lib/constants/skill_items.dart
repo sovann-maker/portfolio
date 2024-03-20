@@ -11,10 +11,10 @@ const List<Map> platformItems = [
     "img": "assets/ios_icon.png",
     "title": "IOS Dev",
   },
-  {
-    "img": "assets/desktop_icon.png",
-    "title": "Desktop Dev",
-  }
+  // {
+  //   "img": "assets/desktop_icon.png",
+  //   "title": "Desktop Dev",
+  // }
 ];
 
 const List<Map> skillItems = [
@@ -31,20 +31,23 @@ const List<Map> skillItems = [
     "title": "HTML5",
   },
   {
-    "img": "assets/css3.png",
-    "title": "CSS3",
+    "img":
+        "/Users/macbookpro/Desktop/flutter/my_profile_tutorial/assets/tailwind.png",
+    "title": "Tailwind CSS",
   },
   {
     "img": "assets/javascript.png",
     "title": "JS",
   },
   {
-    "img": "assets/hugo.png",
-    "title": "Hugo",
+    "img":
+        "/Users/macbookpro/Desktop/flutter/my_profile_tutorial/assets/firebase.png",
+    "title": "Firebase",
   },
   {
-    "img": "assets/docker.png",
-    "title": "Docker",
+    "img":
+        "/Users/macbookpro/Desktop/flutter/my_profile_tutorial/assets/stripe.png",
+    "title": "Stripe",
   },
   {
     "img": "assets/python.png",

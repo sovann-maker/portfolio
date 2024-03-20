@@ -27,7 +27,7 @@ class MainDesktop extends StatelessWidget {
             children: [
               // intro message
               const Text(
-                "Hi,\nI'm Shohruh AK\nA Flutter Developer",
+                "Hi,\nI'm Sovann \na Junior Flutter Developer",
                 style: TextStyle(
                   fontSize: 30,
                   height: 1.5,
@@ -41,7 +41,10 @@ class MainDesktop extends StatelessWidget {
                 width: 250.0,
                 child: ElevatedButton(
                   onPressed: () {},
-                  child: const Text("Get in touch"),
+                  child: const Text(
+                    "Get in touch",
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
               )
             ],

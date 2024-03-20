@@ -75,28 +75,29 @@ List<ProjectUtils> hobbyProjectUtils = [
 // ###############
 // WORK PROJECTS
 List<ProjectUtils> workProjectUtils = [
+  //my projects
   ProjectUtils(
-    image: 'assets/projects/w01.png',
-    title: 'English Brain Craft',
+    image:
+        '/Users/macbookpro/Desktop/flutter/my_profile_tutorial/assets/projects/eCommerce.jpg',
+    title: 'E-Commerce App with BLoC Pattern',
     subtitle:
-        'This is an English learning app for students to learn English through various methods.',
-    androidLink:
-        'https://play.google.com/store/apps/details?id=kr.co.evolcano.donotstudy',
-    iosLink:
-        "https://apps.apple.com/kr/app/%EC%98%81%EC%96%B4%EB%A8%B8%EB%A6%AC-%EA%B3%B5%EC%9E%91%EC%86%8C/id1507102714",
+        'User friendly eCommerce app using Flutter framework, Firebase for authentication, Stripe for in-app payment. ',
+    webLink: 'https://github.com/sovann-maker/flutter-ecommerce.git',
   ),
   ProjectUtils(
-    image: 'assets/projects/w02.png',
-    title: 'Online Shop Web App',
+    image:
+        '/Users/macbookpro/Desktop/flutter/my_profile_tutorial/assets/projects/w02.jpeg',
+    title: 'Todo App using Rest API',
     subtitle:
-        'This is a responsive online shop web application for car engine oil.',
-    webLink: 'https://www.elo.best',
+        'A simple Todo List app using Flutter framework and perform CRUD operation using Rest API.',
+    webLink: 'https://github.com/sovann-maker/todoList_restApi.git',
   ),
   ProjectUtils(
-    image: 'assets/projects/w03.jpeg',
-    title: 'Advertisement Management System',
+    image:
+        '/Users/macbookpro/Desktop/flutter/my_profile_tutorial/assets/projects/expense_tracker.jpg',
+    title: 'Expense Tracker App',
     subtitle:
-        'This is an Advertisement Management System to buy, sell, and manage advertisement.',
-    webLink: 'https://www.externally.unavailable.project',
+        'A basic expense tracker app using Flutter framework and local storage as database.',
+    webLink: 'https://github.com/sovann-maker/expense-tracker.git',
   ),
 ];

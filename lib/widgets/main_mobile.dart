@@ -41,7 +41,7 @@ class MainMobile extends StatelessWidget {
           const SizedBox(height: 30),
           // intro message
           const Text(
-            "Hi,\nI'm Shohruh AK\nA Flutter Developer",
+            "Hi,\nI'm Sovann \na Junior Flutter Developer",
             style: TextStyle(
               fontSize: 24,
               height: 1.5,
@@ -55,7 +55,10 @@ class MainMobile extends StatelessWidget {
             width: 190.0,
             child: ElevatedButton(
               onPressed: () {},
-              child: const Text("Get in touch"),
+              child: const Text(
+                "Get in touch",
+                style: TextStyle(color: Colors.white),
+              ),
             ),
           )
         ],

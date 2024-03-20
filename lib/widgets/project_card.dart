@@ -65,7 +65,7 @@ class ProjectCardWidget extends StatelessWidget {
             child: Row(
               children: [
                 const Text(
-                  "Available on:",
+                  "Source Code:",
                   style: TextStyle(
                     color: CustomColor.yellowSecondary,
                     fontSize: 10,

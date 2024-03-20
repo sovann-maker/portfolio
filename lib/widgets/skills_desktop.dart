@@ -49,7 +49,7 @@ class SkillsDesktop extends StatelessWidget {
         Flexible(
           child: ConstrainedBox(
             constraints: const BoxConstraints(
-              maxWidth: 500,
+              maxWidth: 400,
             ),
             child: Wrap(
               spacing: 10.0,
