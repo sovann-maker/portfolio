@@ -41,4 +41,11 @@ List<ProjectUtils> workProjectUtils = [
         'A basic expense tracker app using Flutter framework and local storage as database.',
     webLink: 'https://github.com/sovann-maker/expense-tracker.git',
   ),
+  ProjectUtils(
+    image: 'assets/projects/sneakershop.jpg',
+    title: 'Sneaker Shop',
+    subtitle:
+        'A user friendly sneaker shop app using Flutter framework and Hive as database.',
+    webLink: 'https://github.com/sovann-maker/sneaker_shop.git',
+  ),
 ];
