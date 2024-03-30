@@ -60,6 +60,7 @@ flutter:
   assets:
     - assets/
     - assets/projects/
+    - assets/projects/sneakershop.jpg
     
   #   - images/a_dot_ham.jpeg
 
