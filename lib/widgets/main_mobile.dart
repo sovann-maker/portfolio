@@ -59,7 +59,7 @@ class MainMobile extends StatelessWidget {
           const SizedBox(height: 30),
           // intro message
           const Text(
-            "Hi,\nI'm Sovann \na Junior Flutter Developer",
+                "Hello,\nI'm Sovann \na Software Engineering",
             style: TextStyle(
               fontSize: 24,
               height: 1.5,
