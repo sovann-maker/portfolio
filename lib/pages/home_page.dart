@@ -78,7 +78,7 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     // title
                     const Text(
-                      "What I can do",
+                      "Technical Skills",
                       style: TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.bold,
