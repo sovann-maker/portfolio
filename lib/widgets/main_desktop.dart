@@ -26,7 +26,7 @@ class MainDesktop extends StatelessWidget {
             children: [
               // intro message
               const Text(
-                "Hello,\nI'm Sovann \na Software Engineering",
+            "Hello,\nI'm Sovann \na Software Engineer",
                 style: TextStyle(
                   fontSize: 30,
                   height: 1.5,
