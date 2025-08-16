@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'dart:js' as js;
 
 import '../constants/colors.dart';
+import 'animated_section.dart';
+import 'modern_button.dart';
+import 'developer_avatar.dart';
 
 class MainMobile extends StatelessWidget {
   const MainMobile({super.key});
@@ -8,77 +12,147 @@ class MainMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
-    final screenHeight = screenSize.height;
+    final screenWidth = screenSize.width;
 
     return Container(
       margin: const EdgeInsets.symmetric(
-        horizontal: 40.0,
-        vertical: 30.0,
-      ),
-      height: screenHeight,
-      constraints: const BoxConstraints(
-        minHeight: 560.0,
+        horizontal: 24.0,
+        vertical: 40.0,
       ),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          // avatar img
-          ShaderMask(
-            shaderCallback: (bounds) {
-              return LinearGradient(colors: [
-                CustomColor.scaffoldBg.withOpacity(0.6),
-                CustomColor.scaffoldBg.withOpacity(0.6),
-              ]).createShader(bounds);
-            },
-            blendMode: BlendMode.srcATop,
+          // Developer Avatar
+          const AnimatedSection(
+            delay: Duration(milliseconds: 300),
+            child: DeveloperAvatar(
+              size: 240,
+              showGlow: true,
+            ),
           ),
-          Container(
-            width: 250,
-            height: 280,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey.withOpacity(0.5),
-                  spreadRadius: 5,
-                  blurRadius: 7,
-                  offset: Offset(0, 3),
+          
+          const SizedBox(height: 40),
+          
+          // Text content
+          AnimatedSection(
+            delay: const Duration(milliseconds: 600),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                // Code-style intro
+                Text(
+                  'const developer = {',
+                  style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                    color: CustomColor.cyanAccent,
+                    fontFamily: 'monospace',
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 16),
+                
+                // Name with code syntax
+                RichText(
+                  textAlign: TextAlign.center,
+                  text: TextSpan(
+                    style: Theme.of(context).textTheme.displayMedium?.copyWith(
+                      fontWeight: FontWeight.w700,
+                      letterSpacing: -1.0,
+                    ),
+                    children: [
+                      const TextSpan(
+                        text: 'name: "',
+                        style: TextStyle(
+                          color: CustomColor.textSecondary,
+                          fontSize: 18,
+                        ),
+                      ),
+                      TextSpan(
+                        text: 'Sovann Chim',
+                        style: TextStyle(
+                          foreground: Paint()
+                            ..shader = CustomColor.cyanGradient.createShader(
+                              const Rect.fromLTWH(0, 0, 200, 50),
+                            ),
+                        ),
+                      ),
+                      const TextSpan(
+                        text: '"',
+                        style: TextStyle(
+                          color: CustomColor.textSecondary,
+                          fontSize: 18,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 8),
+                
+                // Role
+                Text(
+                  'role: "Software Engineer"',
+                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                    color: CustomColor.cyanAccent,
+                    fontFamily: 'monospace',
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 8),
+                
+                // Closing bracket
+                Text(
+                  '};',
+                  style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                    color: CustomColor.textPrimary,
+                    fontFamily: 'monospace',
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 20),
+                
+                // Description with comment style
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: Text(
+                    '/* Building digital experiences with\n   clean code and intuitive design */',
+                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                      color: CustomColor.textSecondary,
+                      height: 1.6,
+                      fontFamily: 'monospace',
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+                const SizedBox(height: 32),
+                
+                // CTA Buttons
+                Column(
+                  children: [
+                    SizedBox(
+                      width: screenWidth * 0.7,
+                      child: ModernButton(
+                        text: 'contact()',
+                        onPressed: () {
+                          js.context.callMethod('open', ['mailto:chimsovann7060@gmail.com?subject=Portfolio Inquiry']);
+                        },
+                        icon: Icons.terminal,
+                        isGradient: true,
+                      ),
+                    ),
+                    const SizedBox(height: 12),
+                    SizedBox(
+                      width: screenWidth * 0.7,
+                      child: ModernButton(
+                        text: 'viewProjects()',
+                        onPressed: () {},
+                        icon: Icons.code,
+                        isOutlined: true,
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
-            child: ClipOval(
-              child: Image.asset(
-                'assets/portfolioPic.JPG',
-                width: 120,
-                height: 120,
-                fit: BoxFit.cover,
-              ),
-            ),
           ),
-          const SizedBox(height: 30),
-          // intro message
-          const Text(
-            "Hello,\nI'm Sovann \na Software Engineer",
-            style: TextStyle(
-              fontSize: 24,
-              height: 1.5,
-              fontWeight: FontWeight.bold,
-              color: CustomColor.whitePrimary,
-            ),
-          ),
-          const SizedBox(height: 15),
-          // contact btn
-          SizedBox(
-            width: 190.0,
-            child: ElevatedButton(
-              onPressed: () {},
-              child: const Text(
-                "Get in touch",
-                style: TextStyle(color: Colors.white),
-              ),
-            ),
-          )
         ],
       ),
     );

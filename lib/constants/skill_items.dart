@@ -1,4 +1,4 @@
-const List<Map> platformItems = [
+const List<Map<String, dynamic>> platformItems = [
   {
     "img": "assets/android_icon.png",
     "title": "Android Dev",
@@ -17,7 +17,7 @@ const List<Map> platformItems = [
   // }
 ];
 
-const List<Map> skillItems = [
+const List<Map<String, dynamic>> skillItems = [
   {
     "img": "assets/flutter.png",
     "title": "Flutter",
