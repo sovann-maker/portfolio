@@ -325,7 +325,14 @@ class _MainDesktopState extends State<MainDesktop> {
                             ),
                           ),
                           TextSpan(
-                            text: ' * mobile and web development. Eager to learn and grow\n',
+                            text: ' * building scalable applications and solving\n',
+                            style: TextStyle(
+                              color: CustomColor.textSecondary,
+                              fontStyle: FontStyle.italic,
+                            ),
+                          ),
+                          TextSpan(
+                            text: ' * complex problems through clean code.\n',
                             style: TextStyle(
                               color: CustomColor.textSecondary,
                               fontStyle: FontStyle.italic,
