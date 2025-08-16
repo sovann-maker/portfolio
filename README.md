@@ -16,7 +16,7 @@ A new Flutter project.
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/portfolio.git
+git clone https://github.com/sovann-maker/portfolio.git
 
 # Navigate to project directory
 cd portfolio
