@@ -19,20 +19,20 @@ class _ModernSkillsSectionState extends State<ModernSkillsSection>
 
   final Map<String, List<Map<String, dynamic>>> skillCategories = {
     'Languages': [
-      {'name': 'Dart', 'level': 90, 'icon': 'assets/dart.png'},
-      {'name': 'JavaScript', 'level': 85, 'icon': 'assets/javascript.png'},
+      {'name': 'Dart', 'level': 60, 'icon': 'assets/dart.png'},
+      {'name': 'JavaScript', 'level': 80, 'icon': 'assets/javascript.png'},
       {'name': 'Python', 'level': 80, 'icon': 'assets/python.png'},
-      {'name': 'HTML5', 'level': 95, 'icon': 'assets/html5.png'},
+      {'name': 'HTML5', 'level': 80, 'icon': 'assets/html5.png'},
     ],
     'Frameworks': [
-      {'name': 'Flutter', 'level': 90, 'icon': 'assets/flutter.png'},
-      {'name': 'Angular', 'level': 75, 'icon': 'assets/angular.png'},
-      {'name': 'Next.js', 'level': 70, 'icon': 'assets/nextjs.png'},
-      {'name': 'Tailwind CSS', 'level': 85, 'icon': 'assets/tailwind.png'},
+      {'name': 'Flutter', 'level': 60, 'icon': 'assets/flutter.png'},
+      {'name': 'Angular', 'level': 80, 'icon': 'assets/angular.png'},
+      {'name': 'Next.js', 'level': 80, 'icon': 'assets/nextjs.png'},
+      {'name': 'Tailwind CSS', 'level': 80, 'icon': 'assets/tailwind.png'},
     ],
     'Tools': [
-      {'name': 'Firebase', 'level': 85, 'icon': 'assets/firebase.png'},
-      {'name': 'Stripe', 'level': 75, 'icon': 'assets/stripe.png'},
+      {'name': 'Firebase', 'level': 80, 'icon': 'assets/firebase.png'},
+      {'name': 'Stripe', 'level': 80, 'icon': 'assets/stripe.png'},
     ],
     'Platforms': platformItems.map((item) => {
       'name': item['title'] as String,
@@ -43,16 +43,14 @@ class _ModernSkillsSectionState extends State<ModernSkillsSection>
 
   static int _getLevelForPlatform(String platform) {
     switch (platform) {
-      case 'Android Dev':
-        return 85;
+      case 'Mobile Dev':
+        return 80;
       case 'Web Dev':
-        return 90;
-      case 'IOS Dev':
-        return 70;
+        return 80;
       case 'Desktop Dev':
-        return 60;
+        return 80;
       default:
-        return 70;
+        return 80;
     }
   }
 
