@@ -2,10 +2,12 @@
   command = """
     git clone https://github.com/flutter/flutter.git --branch stable --depth 1 && \
     export PATH="$PATH:`pwd`/flutter/bin" && \
-    flutter precache && \
+    flutter doctor && \
+    flutter clean && \
     flutter config --enable-web && \
+    dart pub upgrade && \
     flutter pub get && \
-    flutter build web --release
+    flutter build web --release --dart-define=BROWSER_IMAGE_DECODING_ENABLED=false --web-renderer html
   """
   publish = "build/web"
 
@@ -13,6 +15,7 @@
   FLUTTER_VERSION = "3.16.3"
   NODE_VERSION = "18"
   NPM_VERSION = "9"
+  DART_VERSION = "3.2.3"
 
 [[plugins]]
   package = "@netlify/plugin-lighthouse"
