@@ -2,6 +2,10 @@
   command = "flutter pub get && flutter build web --release"
   publish = "build/web"
 
+[build.environment]
+  FLUTTER_VERSION = "3.16.3"
+  DART_VERSION = "3.2.3"
+
 [[headers]]
   for = "/*"
   [headers.values]
