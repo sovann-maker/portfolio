@@ -1,14 +1,5 @@
 [build]
-  command = """
-    git clone https://github.com/flutter/flutter.git --branch stable --depth 1 && \
-    export PATH="$PATH:`pwd`/flutter/bin" && \
-    flutter doctor && \
-    flutter clean && \
-    flutter config --enable-web && \
-    dart pub upgrade && \
-    flutter pub get && \
-    flutter build web --release --dart-define=BROWSER_IMAGE_DECODING_ENABLED=false --web-renderer html
-  """
+  command = "git clone https://github.com/flutter/flutter.git --branch stable --depth 1 && export PATH=\"$PATH:`pwd`/flutter/bin\" && flutter doctor && flutter clean && flutter config --enable-web && flutter pub get && flutter build web --release"
   publish = "build/web"
 
 [build.environment]
