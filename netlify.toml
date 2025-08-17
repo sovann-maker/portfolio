@@ -1,12 +1,11 @@
 [build]
-  command = "flutter pub get && flutter build web --web-renderer canvaskit"
+  command = "flutter pub get && flutter build web --release"
   publish = "build/web"
   
 [build.environment]
   PYTHON_VERSION = "3.10"
   NODE_VERSION = "18"
   MISE_PYTHON_COMPILE = "false"
-  FLUTTER_WEB_USE_SKIA = "false"
 
 [context.production.environment]
   PYTHON_VERSION = "3.10"
