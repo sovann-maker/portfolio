@@ -1,5 +1,15 @@
 [build]
-  command = "git clone https://github.com/flutter/flutter.git --branch stable --depth 1 && export PATH=\"$PATH:`pwd`/flutter/bin\" && flutter doctor && flutter clean && flutter config --enable-web && flutter pub get && flutter build web --release"
+  command = """
+    if [ ! -d "flutter" ]; then
+      git clone https://github.com/flutter/flutter.git --branch stable --depth 1
+    fi &&
+    export PATH="$PATH:`pwd`/flutter/bin" &&
+    flutter doctor &&
+    flutter clean &&
+    flutter config --enable-web &&
+    flutter pub get &&
+    flutter build web --release
+  """
   publish = "build/web"
 
 [build.environment]
@@ -7,6 +17,20 @@
   NODE_VERSION = "18.19.1"
   NPM_VERSION = "10.2.4"
   DART_VERSION = "3.2.3"
+
+[build.processing]
+  skip_processing = false
+
+[build.processing.css]
+  bundle = true
+  minify = true
+
+[build.processing.js]
+  bundle = true
+  minify = true
+
+[build.processing.images]
+  compress = true
 
 [[plugins]]
   package = "@netlify/plugin-lighthouse"
