@@ -1,15 +1,5 @@
 [build]
-  command = """
-    if [ ! -d "flutter" ]; then
-      git clone https://github.com/flutter/flutter.git --branch stable --depth 1
-    fi &&
-    export PATH="$PATH:`pwd`/flutter/bin" &&
-    flutter doctor &&
-    flutter clean &&
-    flutter config --enable-web &&
-    flutter pub get &&
-    flutter build web --release --base-href /
-  """
+  command = "if [ ! -d \"flutter\" ]; then git clone https://github.com/flutter/flutter.git --branch stable --depth 1; fi && export PATH=\"$PATH:`pwd`/flutter/bin\" && flutter doctor && flutter clean && flutter config --enable-web && flutter pub get && flutter build web --release --base-href /"
   publish = "build/web"
 
 [[redirects]]
@@ -39,15 +29,6 @@
 
 [build.processing.images]
   compress = true
-
-[build.processing]
-  skip_processing = false
-
-[build.processing.css]
-  bundle = true
-  minify = true
-
-[build.processing.js]
   bundle = true
   minify = true
 
