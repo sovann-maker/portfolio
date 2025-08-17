@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/utils/project_utils.dart';
-import 'package:url_launcher/url_launcher.dart';
+import '../utils/js_interop.dart';
 
 import '../constants/colors.dart';
 
@@ -54,12 +54,9 @@ class _ModernProjectCardState extends State<ModernProjectCard>
     super.dispose();
   }
 
-  void _openProject() async {
+  void _openProject() {
     if (widget.project.webLink != null) {
-      final Uri url = Uri.parse(widget.project.webLink!);
-      if (await canLaunchUrl(url)) {
-        await launchUrl(url, mode: LaunchMode.externalApplication);
-      }
+      openUrlInNewTab(widget.project.webLink!);
     }
   }
 

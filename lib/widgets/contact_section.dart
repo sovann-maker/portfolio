@@ -4,7 +4,7 @@ import 'package:my_portfolio/constants/sns_links.dart';
 
 import '../constants/colors.dart';
 import 'custom_text_field.dart';
-import 'package:url_launcher/url_launcher.dart';
+import '../utils/js_interop.dart';
 
 class ContactSection extends StatelessWidget {
   const ContactSection({super.key});
@@ -88,36 +88,21 @@ class ContactSection extends StatelessWidget {
             alignment: WrapAlignment.center,
             children: [
               InkWell(
-                onTap: () async {
-                  final Uri url = Uri.parse(SnsLinks.github);
-                  if (await canLaunchUrl(url)) {
-                    await launchUrl(url, mode: LaunchMode.externalApplication);
-                  }
-                },
+                onTap: () => openUrlInNewTab(SnsLinks.github),
                 child: Image.asset(
                   "assets/github.png",
                   width: 28,
                 ),
               ),
               InkWell(
-                onTap: () async {
-                  final Uri url = Uri.parse(SnsLinks.linkedIn);
-                  if (await canLaunchUrl(url)) {
-                    await launchUrl(url, mode: LaunchMode.externalApplication);
-                  }
-                },
+                onTap: () => openUrlInNewTab(SnsLinks.linkedIn),
                 child: Image.asset(
                   "assets/linkedin.png",
                   width: 28,
                 ),
               ),
               InkWell(
-                onTap: () async {
-                  final Uri url = Uri.parse(SnsLinks.telegram);
-                  if (await canLaunchUrl(url)) {
-                    await launchUrl(url, mode: LaunchMode.externalApplication);
-                  }
-                },
+                onTap: () => openUrlInNewTab(SnsLinks.telegram),
                 child: Image.asset(
                   "assets/telegram.png",
                   width: 28,

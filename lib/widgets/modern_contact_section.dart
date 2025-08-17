@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import '../constants/colors.dart';
 import 'modern_button.dart';
 import 'code_section_header.dart';
-import 'package:url_launcher/url_launcher.dart';
+import '../utils/js_interop.dart';
 
 class ModernContactSection extends StatefulWidget {
   const ModernContactSection({super.key});
@@ -40,11 +40,8 @@ class _ModernContactSectionState extends State<ModernContactSection>
   }
 
   // Contact methods
-  void _openEmail() async {
-    final Uri emailUrl = Uri.parse('mailto:chimsovann7060@gmail.com?subject=Portfolio Inquiry');
-    if (await canLaunchUrl(emailUrl)) {
-      await launchUrl(emailUrl);
-    }
+  void _openEmail() {
+    openMailto('chimsovann7060@gmail.com', subject: 'Portfolio Inquiry');
   }
 
   void _copyEmail() {
@@ -80,13 +77,9 @@ class _ModernContactSectionState extends State<ModernContactSection>
     final email = _emailController.text;
     final message = _messageController.text;
 
-    final emailBody =
-        Uri.encodeComponent('From: $name ($email)\n\nMessage:\n$message');
-
-    final Uri emailUrl = Uri.parse('mailto:chimsovann7060@gmail.com?subject=Portfolio Contact from $name&body=$emailBody');
-    if (await canLaunchUrl(emailUrl)) {
-      await launchUrl(emailUrl);
-    }
+    openMailto('chimsovann7060@gmail.com', 
+      subject: 'Portfolio Contact from $name', 
+      body: 'From: $name ($email)\n\nMessage:\n$message');
 
     setState(() => _isSubmitting = false);
     _animationController.reverse();

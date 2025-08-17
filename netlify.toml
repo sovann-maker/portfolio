@@ -1,5 +1,5 @@
 [build]
-  command = "flutter pub get && flutter build web --web-renderer html"
+  command = "flutter pub get && flutter build web --web-renderer canvaskit"
   publish = "build/web"
   
 [build.environment]

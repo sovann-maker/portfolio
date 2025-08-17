@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
+import '../utils/js_interop.dart';
 
 import '../constants/colors.dart';
 import 'animated_section.dart';
@@ -22,12 +22,9 @@ class _MainDesktopState extends State<MainDesktop> {
     widget.onScrollToProjects?.call();
   }
   
-  void _downloadCV() async {
+  void _downloadCV() {
     // Download CV functionality
-    final Uri url = Uri.parse('/assets/Sovann\'s%20Resume..pdf');
-    if (await canLaunchUrl(url)) {
-      await launchUrl(url, mode: LaunchMode.platformDefault);
-    }
+    openUrlInNewTab('/assets/Sovann\'s%20Resume..pdf');
   }
 
   @override
@@ -391,11 +388,10 @@ class _MainDesktopState extends State<MainDesktop> {
                       children: [
                         ModernButton(
                           text: 'developer.contact()',
-                          onPressed: () async {
-                            final Uri emailUrl = Uri.parse('mailto:chimsovann7060@gmail.com?subject=Portfolio Inquiry&body=Hi Sovann, I would like to discuss a project opportunity.');
-                            if (await canLaunchUrl(emailUrl)) {
-                              await launchUrl(emailUrl);
-                            }
+                          onPressed: () {
+                            openMailto('chimsovann7060@gmail.com', 
+                              subject: 'Portfolio Inquiry', 
+                              body: 'Hi Sovann, I would like to discuss a project opportunity.');
                           },
                           icon: Icons.email_outlined,
                           isGradient: true,

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio/utils/project_utils.dart';
 
 import '../constants/colors.dart';
-import 'package:url_launcher/url_launcher.dart';
+import '../utils/js_interop.dart';
 
 class ProjectCardWidget extends StatefulWidget {
   const ProjectCardWidget({
@@ -209,32 +209,17 @@ class _ProjectCardWidgetState extends State<ProjectCardWidget>
                                   if (widget.project.iosLink != null)
                                     _buildPlatformIcon(
                                       'assets/ios_icon.png',
-                                      () async {
-                                        final Uri url = Uri.parse(widget.project.iosLink!);
-                                        if (await canLaunchUrl(url)) {
-                                          await launchUrl(url, mode: LaunchMode.externalApplication);
-                                        }
-                                      },
+                                      () => openUrlInNewTab(widget.project.iosLink!),
                                     ),
                                   if (widget.project.androidLink != null)
                                     _buildPlatformIcon(
                                       'assets/android_icon.png',
-                                      () async {
-                                        final Uri url = Uri.parse(widget.project.androidLink!);
-                                        if (await canLaunchUrl(url)) {
-                                          await launchUrl(url, mode: LaunchMode.externalApplication);
-                                        }
-                                      },
+                                      () => openUrlInNewTab(widget.project.androidLink!),
                                     ),
                                   if (widget.project.webLink != null)
                                     _buildPlatformIcon(
                                       'assets/web_icon.png',
-                                      () async {
-                                        final Uri url = Uri.parse(widget.project.webLink!);
-                                        if (await canLaunchUrl(url)) {
-                                          await launchUrl(url, mode: LaunchMode.externalApplication);
-                                        }
-                                      },
+                                      () => openUrlInNewTab(widget.project.webLink!),
                                     ),
                                 ],
                               ),
