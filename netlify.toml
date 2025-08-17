@@ -8,15 +8,37 @@
     flutter clean &&
     flutter config --enable-web &&
     flutter pub get &&
-    flutter build web --release
+    flutter build web --release --base-href /
   """
   publish = "build/web"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
 
 [build.environment]
   FLUTTER_VERSION = "3.16.3"
   NODE_VERSION = "18.19.1"
   NPM_VERSION = "10.2.4"
   DART_VERSION = "3.2.3"
+
+[build.processing]
+  skip_processing = false
+
+[build.processing.css]
+  bundle = true
+  minify = true
+
+[build.processing.js]
+  bundle = true
+  minify = true
+
+[build.processing.html]
+  pretty_urls = true
+
+[build.processing.images]
+  compress = true
 
 [build.processing]
   skip_processing = false
