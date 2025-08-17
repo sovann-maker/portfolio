@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'dart:js' as js;
+import 'package:url_launcher/url_launcher.dart';
 
 import '../constants/colors.dart';
 import 'animated_section.dart';
@@ -131,8 +131,11 @@ class MainMobile extends StatelessWidget {
                       width: screenWidth * 0.7,
                       child: ModernButton(
                         text: 'contact()',
-                        onPressed: () {
-                          js.context.callMethod('open', ['mailto:chimsovann7060@gmail.com?subject=Portfolio Inquiry']);
+                        onPressed: () async {
+                          final Uri emailUrl = Uri.parse('mailto:chimsovann7060@gmail.com?subject=Portfolio Inquiry');
+                          if (await canLaunchUrl(emailUrl)) {
+                            await launchUrl(emailUrl);
+                          }
                         },
                         icon: Icons.terminal,
                         isGradient: true,

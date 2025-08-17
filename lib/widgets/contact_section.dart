@@ -4,7 +4,7 @@ import 'package:my_portfolio/constants/sns_links.dart';
 
 import '../constants/colors.dart';
 import 'custom_text_field.dart';
-import 'dart:js' as js;
+import 'package:url_launcher/url_launcher.dart';
 
 class ContactSection extends StatelessWidget {
   const ContactSection({super.key});
@@ -88,8 +88,11 @@ class ContactSection extends StatelessWidget {
             alignment: WrapAlignment.center,
             children: [
               InkWell(
-                onTap: () {
-                  js.context.callMethod('open', [SnsLinks.github]);
+                onTap: () async {
+                  final Uri url = Uri.parse(SnsLinks.github);
+                  if (await canLaunchUrl(url)) {
+                    await launchUrl(url, mode: LaunchMode.externalApplication);
+                  }
                 },
                 child: Image.asset(
                   "assets/github.png",
@@ -97,8 +100,11 @@ class ContactSection extends StatelessWidget {
                 ),
               ),
               InkWell(
-                onTap: () {
-                  js.context.callMethod('open', [SnsLinks.linkedIn]);
+                onTap: () async {
+                  final Uri url = Uri.parse(SnsLinks.linkedIn);
+                  if (await canLaunchUrl(url)) {
+                    await launchUrl(url, mode: LaunchMode.externalApplication);
+                  }
                 },
                 child: Image.asset(
                   "assets/linkedin.png",
@@ -106,8 +112,11 @@ class ContactSection extends StatelessWidget {
                 ),
               ),
               InkWell(
-                onTap: () {
-                  js.context.callMethod('open', [SnsLinks.telegram]);
+                onTap: () async {
+                  final Uri url = Uri.parse(SnsLinks.telegram);
+                  if (await canLaunchUrl(url)) {
+                    await launchUrl(url, mode: LaunchMode.externalApplication);
+                  }
                 },
                 child: Image.asset(
                   "assets/telegram.png",

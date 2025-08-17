@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio/utils/project_utils.dart';
 
 import '../constants/colors.dart';
-import 'dart:js' as js;
+import 'package:url_launcher/url_launcher.dart';
 
 class ProjectCardWidget extends StatefulWidget {
   const ProjectCardWidget({
@@ -209,17 +209,32 @@ class _ProjectCardWidgetState extends State<ProjectCardWidget>
                                   if (widget.project.iosLink != null)
                                     _buildPlatformIcon(
                                       'assets/ios_icon.png',
-                                      () => js.context.callMethod('open', [widget.project.iosLink]),
+                                      () async {
+                                        final Uri url = Uri.parse(widget.project.iosLink!);
+                                        if (await canLaunchUrl(url)) {
+                                          await launchUrl(url, mode: LaunchMode.externalApplication);
+                                        }
+                                      },
                                     ),
                                   if (widget.project.androidLink != null)
                                     _buildPlatformIcon(
                                       'assets/android_icon.png',
-                                      () => js.context.callMethod('open', [widget.project.androidLink]),
+                                      () async {
+                                        final Uri url = Uri.parse(widget.project.androidLink!);
+                                        if (await canLaunchUrl(url)) {
+                                          await launchUrl(url, mode: LaunchMode.externalApplication);
+                                        }
+                                      },
                                     ),
                                   if (widget.project.webLink != null)
                                     _buildPlatformIcon(
                                       'assets/web_icon.png',
-                                      () => js.context.callMethod('open', [widget.project.webLink]),
+                                      () async {
+                                        final Uri url = Uri.parse(widget.project.webLink!);
+                                        if (await canLaunchUrl(url)) {
+                                          await launchUrl(url, mode: LaunchMode.externalApplication);
+                                        }
+                                      },
                                     ),
                                 ],
                               ),
