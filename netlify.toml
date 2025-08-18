@@ -2,11 +2,6 @@
   command = "if [ ! -d \"flutter\" ]; then git clone https://github.com/flutter/flutter.git --branch stable --depth 1; fi && export PATH=\"$PATH:`pwd`/flutter/bin\" && flutter doctor && flutter clean && flutter config --enable-web && flutter pub get && flutter build web --release --base-href /"
   publish = "build/web"
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-
 [build.environment]
   FLUTTER_VERSION = "3.16.3"
   NODE_VERSION = "18.19.1"
@@ -31,9 +26,6 @@
   compress = true
   bundle = true
   minify = true
-
-[build.processing.images]
-  compress = true
 
 [[plugins]]
   package = "@netlify/plugin-lighthouse"
